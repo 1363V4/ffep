@@ -50,7 +50,7 @@ def apply():
         dest = datadir_temp / current_time
         dest = dest.with_suffix(".json")
         with open(dest, 'w') as f:
-            json.dump(data, f)
+            json.dump(data, f, indent=4)
         flash('Message sent')
         return redirect(url_for('join'))
     flash("Not logged in")
@@ -98,6 +98,15 @@ def games():
             game = json.load(f)
         games += [game]
     return render_template('games.html', games=games)
+
+@app.route('/snitch')
+def snitch():
+    snitches = []
+    for snitch_json in datadir_temp.iterdir():
+        with open(snitch_json) as f:
+            snitch = json.load(f)
+        snitches += [snitch]
+    return render_template('snitch.html', snitches=snitches)
 
 if __name__ == '__main__':
     app.run(debug=True)

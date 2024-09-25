@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Snitch</h1>
+{% for snitch in snitches %}
+<section class="stack gap-m card">
+    <h2>{{ snitch['username'] }}</h2>
+    <p>{{ snitch['reason'] }}</p>
+    <p>{{ snitch['hear_about'] }}</p>
+</section>
+{% endfor %}
+{% endblock %}

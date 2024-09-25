@@ -1,12 +1,13 @@
 from flask import Flask, flash, redirect, request, render_template, session, url_for
 from werkzeug.security import generate_password_hash, check_password_hash, safe_join
 import json
+import os
 from pathlib import Path
 from datetime import datetime
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'b1b1d5f5e63900206a4a368f14f63dc505848d521022de40fc8b74988016cd12'
+app.config['SECRET_KEY'] = os.environ.get('FLASK_SECRET_KEY')
 
 devdir = Path(__file__).parent
 datadir_people = devdir / "data" / "people"

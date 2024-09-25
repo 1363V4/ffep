@@ -33,6 +33,7 @@ def login():
                     session['username'] = username 
                     flash('You were successfully logged in')
                     return redirect(url_for('dashboard'))
+    flash("Login failed")
     return redirect(url_for('home'))
 
 @app.route('/apply', methods=['POST'])
@@ -52,6 +53,7 @@ def apply():
             json.dump(data, f)
         flash('Message sent')
         return redirect(url_for('join'))
+    flash("Not logged in")
     return redirect(url_for('home'))
 
 @app.route('/logout')
@@ -75,6 +77,7 @@ def rules():
 def dashboard():
     if 'username' in session:
         return render_template('dashboard.html')
+    flash("Not logged in")
     return redirect(url_for('home'))
 
 @app.route('/profile')
@@ -84,6 +87,7 @@ def profile():
             user = json.load(f)
             user['username'] = session['username']
         return render_template('profile.html', user=user)
+    flash("Not logged in")
     return redirect(url_for('home'))
 
 @app.route('/games')

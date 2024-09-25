@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Rejoindre</h1>
+<div class="stack gap-l">
+    <section class="stack gap-m card">
+        <h2>Rejoindre</h2>
+        <p>Rejoindre l'association permet de nous soutenir et offre de nombreux avantages !</p>
+        <p>Pour rejoindre, remplissez le formulaire suivant :</p>
+    </section>
+    <section class="stack gap-m card">
+        <h2>Formulaire d'adhésion</h2>
+        <form action="apply" method="post" class="stack gap-s">
+            <label for="username">Nom d'utilisateur souhaité</label>
+            <input type="text" name="username" id="username" required>
+            <label for="pwd">Mot de passe</label>
+            <input type="password" name="pwd" id="pwd" required>
+            <label for="repeat-pwd">Répétez le mot de passe</label>
+            <input type="password" name="repeat-pwd" id="repeat-pwd" required>
+            <label for="reason">Pourquoi rejoindre ?</label>
+            <textarea name="reason" id="reason" required></textarea>
+            <label for="hear-about">Comment avez-vous entendu parler de nous ? (facultatif)</label>
+            <textarea name="hear-about" id="hear-about"></textarea>
+            <input type="submit" value="Soumettre">
+        </form>
+    </section>
+</div>
+{% endblock %}

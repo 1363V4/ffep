@@ -1,0 +1,4 @@
+le chat:
+un seul fil chronologique
+username - message
+---

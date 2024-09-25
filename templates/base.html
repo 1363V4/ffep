@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/static/css/site.css">
+        <title>ffep</title>
+        <script src="/static/js/gold.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="chain gap-m">
+                <a href="/">
+                    <img src="/static/svg/fish.svg">
+                </a>
+                <p>ffep</p>
+            </div>
+            <div class="chain gap-m">
+                <a href="/join">Rejoindre</a>
+                <a href="/games">Parties</a>
+                <a href="/dashboard">Espace membres</a>
+                {% if session['username'] %}
+                <div id="user_icon">
+                    <details>
+                        <summary>{{ session['username']  }}</summary>
+                        <ul class="stack">
+                            <li><a href="/profile">mon profil</a></li>
+                            <li><a href="/logout">logout</a></li>
+                        </ul>
+                    </details>
+                </div>
+                {% endif %}
+            </div>
+        </header>
+        <div id="flash">
+            {% with messages = get_flashed_messages() %}
+            {% for message in messages %}
+            {{ message }}
+            {% endfor %}
+            {% endwith %}
+        </div>
+        <main class="gold-center stack gap-l">
+            {% block content %}
+            {% endblock %}
+        </main>
+        <footer class="chain gap-l">
+            <div class="stack gap-s">
+                <h4>Plan du site</h4>
+                <ul class="stack">
+                    <li><a href="/">Accueil</a></li>
+                    <li><a href="/rules">Règles</a></li>
+                    <li><a href="/games">Parties</a></li>
+                    <li><a href="/join">Rejoindre</a></li>
+                    <li><a href="/faq">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="stack gap-s">
+                <h4>FFEP</h4>
+                <a href="/">
+                    <img src="/static/svg/fish.svg">
+                </a>
+            </div>
+            <div class="stack gap-s">
+                <h4>Mentions légales</h4>
+                <ul class="stack">
+                    <li>RGPD</li>
+                    <li>Raison légale</li>
+                </ul>
+            </div>
+        </footer>
+    </body>
+</html>

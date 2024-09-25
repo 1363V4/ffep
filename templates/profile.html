@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Profile</h1>
+<div class="stack gap-l">
+    <section class="card">
+        <h2>Infos</h2>
+        <p>Pseudo: {{ user['username'] }}</p>
+        <p>Email: {{ user['email'] }}</p>
+        <p>Parties jouées : 0</p>
+        <p>Parties gagnées : 0</p>
+    </section>
+</div>
+{% endblock %}

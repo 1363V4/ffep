@@ -30,6 +30,11 @@
 		text-wrap: pretty;
 		overflow-wrap: break-word;
 	}
+
+	ul {
+		padding: 0;
+		list-style-type: none;
+	}
 }
 
 @layer default {
@@ -44,15 +49,6 @@
 		--xl: calc(var(--m) * pow(var(--phi), 2));
 		--xxl: calc(var(--m) * pow(var(--phi), 3));
 		--xxxl: calc(var(--m) * pow(var(--phi), 4));
-		--t: 1s;
-		--t-xxxs: calc(var(--t) * pow(var(--phi), -4));
-		--t-xxs: calc(var(--t) * pow(var(--phi), -3));
-		--t-xs: calc(var(--t) * pow(var(--phi), -2));
-		--t-s: calc(var(--t) * pow(var(--phi), -1));
-		--t-l: calc(var(--t) * pow(var(--phi), 1));
-		--t-xl: calc(var(--t) * pow(var(--phi), 2));
-		--t-xxl: calc(var(--t) * pow(var(--phi), 3));
-		--t-xxxl: calc(var(--t) * pow(var(--phi), 4));
 	}
 
 	h1 {
@@ -115,6 +111,7 @@
 	.stack {
 		display: flex;
 		flex-direction: column;
+		align-items: center;
 		&.gap-s {
 			gap: var(--s);
 		}
@@ -124,17 +121,12 @@
 		&.gap-l {
 			gap: var(--l);
 		}
-		&.gap-xl {
-			gap: var(--xl);
-		}
-		&.gap-xxl {
-			gap: var(--xxl);
-		}
 	}
-
+	
 	.chain {
 		display: flex;
 		flex-direction: row;
+		align-items: center;
 		&.gap-s {
 			gap: var(--s);
 		}
@@ -143,12 +135,6 @@
 		}
 		&.gap-l {
 			gap: var(--l);
-		}
-		&.gap-xl {
-			gap: var(--xl);
-		}
-		&.gap-xxl {
-			gap: var(--xxl);
 		}
 	}
 }

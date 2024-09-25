@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>fédération</h1>
+<section class="stack gap-m card">
+    <h2>qu'est-ce</h2>
+    <p>test website</p>
+</section>
+<section class="stack gap-m card">
+    <h2>rejoindre</h2>
+    <p>test website</p>
+    <a href="/join" class="button">rejoindre</a>
+</section>
+<section class="stack gap-m card">
+    <h2>déjà membre ?</h2>
+    <p>connectez-vous</p>
+    <form action="login" method="post" class="stack gap-s">
+        <input type="text" name="username" placeholder="fischer" required autocomplete="username">
+        <input type="password" name="pwd" placeholder="password" required autocomplete="current-password">
+        <input type="submit" value="Se connecter">
+    </form>
+</section>
+{% endblock %}

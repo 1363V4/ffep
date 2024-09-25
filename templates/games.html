@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Games</h1>
+{% for game in games %}
+<section class="stack gap-m card">
+    <h2>{{ game['date'] }}</h2>
+    <div class="stack gap-s">
+        {% for key, value in game['data'].items() %}
+        <p>{{ key }}: {{ value }}</p>
+        {% endfor %}
+    </div>
+    <details>
+        <summary>Comments</summary>
+        {{ game['comments'] }}
+    </details>
+</section>
+{% endfor %}
+{% endblock %}

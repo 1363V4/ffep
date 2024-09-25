@@ -1,0 +1,59 @@
+@import url(gold.css);
+
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--l);
+    background-color: aqua;
+}
+
+header img {
+    width: 2em;
+}
+
+#flash {
+    text-align: center;
+    color: white;
+    background-color: black;
+    animation: fadeout 5s forwards;
+}
+
+@keyframes fadeout {
+    70% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+main {
+    margin-top: var(--l);
+}
+
+h1 {
+    display: none;
+}
+
+.card {
+    background-color: azure;
+    border: solid 1px black;
+    border-radius: var(--m);
+    padding: var(--m);
+}
+
+.button {
+    border: solid 1px black;
+    margin: var(--s);
+    padding: var(--s);
+}
+
+footer {
+    justify-content: space-around;
+    margin-top: var(--l);
+    padding: var(--l);
+    background-color: aqua;
+    align-items: start;
+}
+
+footer img {
+    width: 2em;
+}

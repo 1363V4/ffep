@@ -2,3 +2,8 @@ le chat:
 un seul fil chronologique
 username - message
 ---
+gold.css
+wrap ?
+a, input, textarea
+---
+rgpd, 1901

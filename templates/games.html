@@ -5,9 +5,10 @@
 {% for game in games %}
 <section class="stack gap-m card">
     <h2>{{ game['date'] }}</h2>
+    <span>{{ game['result'] }}</span>
     <div class="stack gap-s">
         {% for key, value in game['data'].items() %}
-        <p>{{ key }}: {{ value }}</p>
+        {{ key }}: {{ value }}
         {% endfor %}
     </div>
     <details>

@@ -112,6 +112,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		flex-wrap: wrap;
 		&.gap-s {
 			gap: var(--s);
 		}
@@ -127,6 +128,7 @@
 		display: flex;
 		flex-direction: row;
 		align-items: center;
+		flex-wrap: wrap;
 		&.gap-s {
 			gap: var(--s);
 		}

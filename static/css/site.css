@@ -1,16 +1,76 @@
 @import url(gold.css);
 
 
+:root {
+    --desktop: 1;
+    --color-bg: hsl(290, 25%, 95%);
+    --color-bg-2: hsl(199, 34%, 33%);
+    --color-bg-3: hsl(216, 39%, 28%);
+    --color-primary: hsl(37, 55%, 65%);
+    --color-secondary: hsl(36, 29%, 44%);
+    --color-shadow: hsl(216, 39%, 25%);
+}
+
+@media(max-width: 600px) {
+    :root {
+        --desktop: 0;
+    }
+    
+    .gold-center > * {
+        width: 90%;
+    }
+}
+
+@font-face {
+    font-family: 'Mynerve';
+    src: url('/static/fonts/Mynerve-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Sarina';
+    src: url('/static/fonts/Sarina-Regular.ttf') format('truetype');
+
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Mynerve', sans-serif;
+    background: linear-gradient(to top, var(--color-bg-2), var(--color-bg-3));
+    filter: drop-shadow(0px 6px 6px var(--color-shadow));
+}
+
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: var(--l);
-    background-color: aqua;
+    gap: var(--l);
+    padding: calc(var(--l) * var(--desktop) + var(--s) * (1 - var(--desktop)));
+    margin: calc(var(--l) * var(--desktop) + var(--s) * (1 - var(--desktop)));
+    font-weight: bold;
+    background-color: var(--color-bg);
+    border-radius: var(--xl);
 }
 
-header img {
+header img, footer img {
     width: 2em;
+    background-color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    border-radius: 50%;
+}
+
+.logo {
+    font-family: 'Sarina', sans-serif;
+    font-size: var(--l);
+    font-style: italic;
+    color: var(--color-primary);
+}
+
+a {
+    color: unset;
+    text-decoration: none;
+}
+
+summary:hover, a:hover {
+    color: var(--color-primary);
 }
 
 #flash {
@@ -33,24 +93,52 @@ h1 {
     display: none;
 }
 
+h2 {
+    font-size: var(--xl);
+}
+
 .card {
-    background-color: azure;
-    border: solid 1px black;
+    background-color: var(--color-bg);
     border-radius: var(--m);
     padding: var(--m);
 }
 
+.card span {
+    color: var(--color-primary);
+    font-weight: bold;
+    animation: colorChange 5s infinite;
+}
+
+@keyframes colorChange {
+    50% { color: var(--color-secondary); }
+}
+
 .button {
-    border: solid 1px black;
+    border: none;
     margin: var(--s);
     padding: var(--s);
+    color: var(--color-bg);
+    background-color: var(--color-bg-2);
+    border-radius: var(--m);
+}
+
+.button:hover {
+    background-color: var(--color-bg-3);
+    filter: drop-shadow(0px 0px 2px var(--color-shadow));
+}
+
+input, textarea {
+    padding: var(--s);
+    background-color: var(--color-bg);
+    border-radius: var(--s);
 }
 
 footer {
     justify-content: space-around;
-    margin-top: var(--l);
+    margin: var(--xl);
     padding: var(--l);
-    background-color: aqua;
+    background-color: var(--color-bg);
+    border-radius: var(--l);
     align-items: start;
 }
 
